@@ -1,0 +1,39 @@
+<idea-plugin>
+    <id>com.mangkyu.yaml-properties-hinter</id>
+    <name>YAML Properties Hinter</name>
+    <vendor>mangkyu</vendor>
+    <description><![CDATA[
+        <p>Displays the full properties-style dot-notation path for YAML keys as a block inlay hint above the current line.</p>
+
+        <h3>Full path hint</h3>
+        <p>Shows the dot-notation path (e.g. <code># spring.datasource.url</code>) above the current line.</p>
+        <img src="https://raw.githubusercontent.com/mangkyu/yaml-properties-hinter-intellij-plugin/main/images/show_hints.png" alt="Show hints" width="600"/>
+
+        <h3>Multi-line selection</h3>
+        <p>Select multiple lines to see all property paths at once.</p>
+        <img src="https://raw.githubusercontent.com/mangkyu/yaml-properties-hinter-intellij-plugin/main/images/show_multiple_hints.png" alt="Show multiple hints" width="600"/>
+
+        <h3>Click to copy</h3>
+        <p>Click the hint to copy the path to clipboard. For keys with values, choose between "Copy keys" and "Copy keys with values".</p>
+        <img src="https://raw.githubusercontent.com/mangkyu/yaml-properties-hinter-intellij-plugin/main/images/copy_hints.png" alt="Copy hints" width="600"/>
+
+        <h3>Settings</h3>
+        <p><b>Settings &gt; Tools &gt; YAML Properties Hinter</b></p>
+        <ul>
+            <li><b>Max paths to display</b> — Maximum number of paths shown for a selection (default: 10)</li>
+            <li><b>Hint color</b> — Customize the hint text color (default: #6A8759)</li>
+        </ul>
+    ]]></description>
+
+    <depends>com.intellij.modules.platform</depends>
+    <depends>org.jetbrains.plugins.yaml</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <applicationService serviceImplementation="com.mangkyu.yamlpropertieslens.YamlPropertiesLensSettings"/>
+        <applicationConfigurable parentId="tools"
+                                 instance="com.mangkyu.yamlpropertieslens.YamlPropertiesLensConfigurable"
+                                 id="com.mangkyu.yamlpropertieslens.settings"
+                                 displayName="YAML Properties Hinter"/>
+        <postStartupActivity implementation="com.mangkyu.yamlpropertieslens.YamlPropertyHintManager"/>
+    </extensions>
+</idea-plugin>

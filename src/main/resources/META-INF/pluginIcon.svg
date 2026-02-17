@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#6C5CE7"/>
+      <stop offset="100%" stop-color="#4B6EAF"/>
+    </linearGradient>
+    <linearGradient id="badge" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#F39C12"/>
+      <stop offset="100%" stop-color="#E8833A"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Rounded square background -->
+  <rect x="1" y="1" width="38" height="38" rx="8" fill="url(#bg)"/>
+
+  <!-- YML text -->
+  <text x="20" y="21" font-family="SF Pro Display, Inter, Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="700" fill="white" text-anchor="middle" letter-spacing="0.5">YML</text>
+
+  <!-- Subtle path dots below text -->
+  <circle cx="12" cy="28" r="1.3" fill="white" opacity="0.5"/>
+  <line x1="14" y1="28" x2="18" y2="28" stroke="white" stroke-width="1" stroke-linecap="round" opacity="0.5"/>
+  <circle cx="20" cy="28" r="1.3" fill="white" opacity="0.5"/>
+  <line x1="22" y1="28" x2="26" y2="28" stroke="white" stroke-width="1" stroke-linecap="round" opacity="0.5"/>
+  <circle cx="28" cy="28" r="1.3" fill="white" opacity="0.5"/>
+
+  <!-- Hint badge -->
+  <rect x="22" y="31" width="17" height="9" rx="4.5" fill="url(#badge)"/>
+  <text x="30.5" y="37.5" font-family="SF Pro Display, Inter, Helvetica Neue, Arial, sans-serif" font-size="6" font-weight="600" fill="white" text-anchor="middle">hint</text>
+</svg>
