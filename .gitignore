@@ -11,6 +11,10 @@ out
 *.ipr
 *.iws
 /out/
+.intellijPlatform
 
 # OS
 .DS_Store
+
+# claude
+.omc

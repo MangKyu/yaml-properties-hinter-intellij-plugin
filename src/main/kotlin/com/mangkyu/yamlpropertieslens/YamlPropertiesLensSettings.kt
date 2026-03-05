@@ -30,7 +30,13 @@ class YamlPropertiesLensSettings : PersistentStateComponent<YamlPropertiesLensSe
         }
 
     companion object {
-        fun getInstance(): YamlPropertiesLensSettings =
-            ApplicationManager.getApplication().getService(YamlPropertiesLensSettings::class.java)
+        fun getInstance(): YamlPropertiesLensSettings {
+            return try {
+                ApplicationManager.getApplication().getService(YamlPropertiesLensSettings::class.java)
+            } catch (_: ClassCastException) {
+                // During dynamic plugin reload, the old classloader's instance may conflict
+                YamlPropertiesLensSettings()
+            }
+        }
     }
 }
